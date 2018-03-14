@@ -101,9 +101,7 @@ $(function() {
 		$("#lift>ul").on("click", "a.lift_btn", function () {
 			var $a = $(this);
 			var i = $a.parent().index();
-			var offsetTop = $(`.
-			floor:eq(${i})`).
-			offset().top;
+			var offsetTop = $(`.floor:eq(${i})`).offset().top;
 			console.log(offsetTop)
 			$("html").stop(true).animate({
 				scrollTop: offsetTop - 50
