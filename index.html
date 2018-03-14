@@ -1,1 +1,416 @@
-index.html
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>NBA首页</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/index.css">
+ </head>
+ <body>
+  <!--头部:导航栏-->
+  <header id="header"></header>
+  <!--左右移动-->
+  <div class="nav-zy floor">
+	<!--日期星期-->
+	<div class="datepicker">
+		<div class="datepicker-selector">
+			<div class="datepicker-button" id="datepickerButton">
+			<!--<a href="#"><i class="icon-angle-left"></i></a> -->
+			<!--<div> -->
+			<!--<span class="ng-binding"></span> -->
+			<!--<span class="ng-binding"></span> -->
+			<!--</div> -->
+			<!--<a href="#"><i class="icon-angle-right"></i></a> -->
+			</div>
+			<div class="datepicker-display">9 场比赛</div>
+			<div class="datepicker-next">
+				<a href="#" class="datepicker-next__button">全部赛程</a>
+			</div>
+		</div>
+	</div>
+	<!-- 比赛详情-->
+	<div class="box" id="box">
+		<a href="javascript:;" class="arrow-button arrow-button__left empty">
+			<span><i>&lt;</i></span>
+		</a>
+		<a href="javascript:;" class="arrow-button arrow-button__right full">
+			<span><i>&gt;</i></span>
+		</a>
+		<div class="scoreboard-games__game">
+				<div class="zy">
+				<div class="broadcast">
+				<div class="logo1">
+						<div>
+							<img src="imgs/logo/76ers.png">
+						</div>
+						<div>76人</div>
+						</div>
+						<p>8:00</p>
+						<div class="logo2">
+						<div>
+						<img src="imgs/logo/hornets.png">
+						</div>
+						<div>黄蜂</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+  </div>
+  <!--轮播要闻-->
+  <div class="section">
+	<!--轮播图数据库导入-->
+	<div id="igs">
+	  <div id="carousel"><a href="javascript:;" class="ig"><img src="imgs/lunbo/banner1.jpg"></a>
+      <a href="javascript:;" class="ig"><img src="imgs/lunbo/banner2.jpg"></a>
+	  <a href="javascript:;" class="ig"><img src="imgs/lunbo/banner3.jpg"></a>
+	  <a href="javascript:;" class="ig"><img src="imgs/lunbo/banner4.jpg"></a></div>
+	  <div class="btn btn1"></div>
+	  <div class="btn btn2"></div>
+	  <ul id="tabs">
+		<li class="tab"></li>
+		<li class="tab"></li>
+		<li class="tab"></li>
+		<li class="tab"></li>
+	  </ul>
+	</div>
+	<!--图文要闻数据导入-->
+	<div class="mod-img-impnews">
+		<ul>
+			<li><a href="javascript:;">
+				<img src="imgs/index/146996897.jpg">
+				<i>复出首站15投3中 哈登手感不佳但仍能挽救球队</i>
+			</a></li>
+			<li><a href="javascript:;">
+				<img src="imgs/index/146996576.jpg">
+				<i>末节之王再露峥嵘 小刺客赛季新高助骑士止血</i>			
+			</a></li>
+			<li><a href="javascript:;">
+				<img src="imgs/index/146996367.jpg">
+				<i>视频-詹姆斯夺全明星票王 历史第二仅逊乔丹</i>
+			</a></li>
+			<li><a href="javascript:;">
+				<img src="imgs/index/146990456.jpg">
+				<i>2018全明星首发出炉：詹姆斯库里领衔东西部</i>
+			</a></li>
+		</ul>
+	</div>
+	<!--新闻要闻数据库导入-->
+	<div class="mod-impnews">
+		<div class="impnews-title">
+			要闻
+			<i class="switch-to-next" data-for="text-news">换一换</i>
+		</div>
+		<div class="impnews-wrap">
+			<ul class="text-news ">
+				<li><a href="javascript:;"><span class="dot icon">
+					戈登30分哈登复出10+7 火箭轻取森林狼
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					小托马斯罚球准绝杀 骑士险胜魔术结束连败
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					大帝26+16+6欧文休战 76人险胜凯尔特人
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					最新新秀榜：赛季5次30+ 米切尔高居榜首
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					詹姆斯：我更想等到周末再解锁3万分的成就
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					小里：阿里扎已联系了我 我们之间没有问题
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					格里芬赞队友：我们这支球队信赖每一个人
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					安东尼：接受角色变化后，比赛又变得有趣
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					波波盛赞阿德：他就是我们战绩出色的原因
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					詹姆斯谈球队现状：这是我们最困难的一年
+				</span></a></li>	
+			</ul>
+			<ul class="text-news hide">
+				<li><a href="javascript:;"><span class="dot icon">
+					富尼耶32分创生涯新高 魔术爆冷擒获森林狼
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					塞夫洛沙将接受右膝内侧副韧带修复手术
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					湖人队将为埃尔金-贝勒在斯台普斯设立雕像
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					曝多名骑士球员不满现状 担忧无力对抗勇士
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					米罗蒂奇：知道交易流言 但未与管理层谈过
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					阿杜：客场勇才真猛 老詹：全队已经很努力
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					路威低调谈胜利：这是一场充满情绪的比赛
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					居功不自傲 安东尼：防守调整才是逆转关键
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					拉文：我有些累但想在20分钟里竭尽全力
+				</span></a></li>
+				<li><a href="javascript:;"><span class="dot icon">
+					西蒙斯：我不打算从任何人身上汲取教训
+				</span></a></li>	
+			</ul>
+		</div>
+	</div>
+  </div>
+  <!--最新资讯-->
+  <div class="section floor" style="height:740px;">
+	<div class="news-layout">
+		<h2 class="new-title">
+			<a href="javascript:;" class="news-title-tab on">最新资讯</a>
+		</h2>
+	</div>
+	<div class="news-list">
+		<div class="switch-wrapper"></div>
+	</div>
+	<div class="boxs">
+		<a href="javascript:;" class="box1 second-row">
+		<img src="imgs/index/147003681.jpg">
+		<span class="normal-news">膝伤痊愈 缺阵15场后戈贝尔今日战纽约复出</span>
+		</a>
+		<a href="javascript:;" class="box2 second-row">
+		<img src="imgs/index/147003551.jpg">
+		<span class="normal-news">20日数据酷：最近连续十赛季至少1000分现役仅阿德詹皇</span>
+		</a>
+		<a href="javascript:;" class="box3 second-row">
+		<span class="img-wrapper"><img src="imgs/index/147003326.jpg"></span>
+		<span class="news-title">MVP榜：杜兰特牢踞榜首 库里跻身前三</span>
+		</a>
+		<a href="javascript:;" class="box4 second-row">
+		<span class="img-wrapper"><img src="imgs/index/147003049.jpg"></span>
+		<span class="news-title">曝骑士有意补强后场 乔治-希尔成引援目标</span>
+		</a>
+		<a href="javascript:;" class="box5 second-row">
+		<span class="img-wrapper"><img src="imgs/index/147003039.jpg"></span>
+		<span class="news-title">沃克：如果我被球队交易了 我肯定会崩溃的</span>
+		</a>
+	</div>
+	<a href="javascript:;" class="load-btn"><span>更多资讯</span></a>
+	<div class="ranking">
+		<div class="standings-group mobile">
+			<a href="javascript:;"><span class="lmpm lmbg">联盟排名</span></a>
+			<a href="javascript:;"><span class="fqpm">分区排名</span></a>
+		</div>
+		<div class="standings-group mobile">
+			<a href="javascript:;">
+				<span class="dblm lmcolor">
+					<img src="imgs/logo/eastern_logo.png">
+					东部联盟
+				</span>
+			</a>
+			<a href="javascript:;">
+				<span class="xblm">
+					<img src="imgs/logo/western_logo.png">
+					西部联盟
+				</span>
+			</a>
+		</div>
+		<div class="nba-stat-table">
+			<table>
+				<thead>
+					<tr>
+						<th>排名</th>
+						<th></th>
+						<th>姓名</th>
+						<th>胜</th>
+						<th>负</th>
+						<th>胜场差</th>
+					</tr>
+				</thead>
+				<tbody class="t1 qdpm">
+				</tbody>
+				<tbody class="t1 qdpm1 hide">
+				</tbody>
+				<tbody class="t2 fqqdpm hide">
+				</tbody>
+				<tbody class="t2 fqqdpm1 hide">
+				</tbody>
+				<tbody class="t2 fqqdpm2 hide">
+				</tbody>
+			</table>
+		</div>
+		<div class="nba-js">
+			x - 取得季后赛资格 | e - 取得东部季后赛资格 | a - 取得大西洋赛区冠军 | c - 取得中部赛区季后赛资格
+			se - 取得东南赛区季后赛资格 | w - 取得西部季后赛资格 | sw - 取得西南赛区季后赛资格
+			nw - 取得西北赛区季后赛资格 | p - 取得太平洋赛区季后赛资格 | o - 退出季后赛争夺
+		</div>
+	</div>
+  </div>
+  <!--视屏推荐-->
+  <div id="mod-video" class="floor">
+	<div class="mod-video-tab">
+		<div class="video-title">最新视屏</div>
+	</div>
+	<div class="mod-video-wrap">
+		<div class="video-list">
+			<img src="imgs/sp/1.jpg">
+			<span>7日最佳镜头</span>
+		</div>
+		<div class="video-list">
+			<img src="imgs/sp/2.jpg">
+			<span>穆大叔的故事</span>
+		</div>
+		<div class="video-list">
+			<img src="imgs/sp/3.jpg">
+			<span>马尔.马宁的24秒</span>
+		</div>
+		<div class="video-list">
+			<img src="imgs/sp/4.jpg">
+			<span>魔术-爵士</span>
+		</div>
+		<div class="video-list">
+			<img src="imgs/sp/5.jpg">
+			<span>灰熊-马刺</span>
+		</div>
+		<div class="video-list">
+			<img src="imgs/sp/6.jpg">
+			<span>湖人-开拓者</span>
+		</div>
+		<div class="video-list">
+			<img src="imgs/sp/7.jpg">
+			<span>7日最佳快攻</span>
+		</div>
+		<div class="video-list">
+			<img src="imgs/sp/8.jpg">
+			<span>7日最佳扣篮</span>
+		</div>
+	</div>
+  </div>
+  <!--NBA社交媒体-->
+  <ul id="social-media-list">
+	<li>
+		<a href="javascript:;">
+			<div>
+				<img src="imgs/hz/icon_weibo.jpg" class="media-icon">
+				<span>微博</span>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="javascript:;">
+			<div>
+				<img src="imgs/hz/media-wx.png" class="media-icon">
+				<span>NBA 微信</span>
+			</div>
+		</a>
+		<img src="imgs/hz/media-wx1.png" class="qrcode">
+	</li>
+	<li>
+		<a href="javascript:;">
+			<div>
+				<img src="imgs/hz/media-pz.png" class="media-icon">
+				<span>NBA Pz</span>
+			</div>
+		</a>
+		<img src="imgs/hz/media-pz1.png" class="qrcode">
+	</li>
+	<li>
+		<a href="javascript:;">
+			<div>
+				<img src="imgs/hz/media-qq.png" class="media-icon">
+				<span>NBA QQ</span>
+			</div>
+		</a>
+		<img src="imgs/hz/media-qq1.png" class="qrcode">
+	</li>
+	<li>
+		<a href="javascript:;">
+			<div>
+				<img src="imgs/hz/media-xq.png" class="media-icon">
+				<span>NBA 兴趣</span>
+			</div>
+		</a>
+		<img src="imgs/hz/media-xq1.png" class="qrcode">
+	</li>
+	<li>
+		<a href="javascript:;">
+			<div>
+				<img src="imgs/hz/media-ttnba.png" class="media-icon">
+				<span>TTNBA</span>
+			</div>
+		</a>
+		<img src="imgs/hz/media-ttnba1.png" class="qrcode">
+	</li>
+	<li>
+		<a href="javascript:;">
+			<div>
+				<img src="imgs/hz/media-store.png" class="media-icon">
+				<span>NBA Store</span>
+			</div>
+		</a>
+		<img src="imgs/hz/media-store1.png" class="qrcode">
+	</li>
+	<li>
+		<a href="javascript:;">
+			<div>
+				<img src="imgs/hz/media-xh.png" class="media-icon">
+				<span>NBA 鞋会</span>
+			</div>
+		</a>
+		<img src="imgs/hz/footer-sports1.png" class="qrcode">
+	</li>
+  </ul>
+  <!--导航栏滚动-->
+  <div id="lift" style="display: block;">
+	<ul class="lift_list"> 
+		<li class="lift_item">
+			<a href="javascript:;" class="lift_btn">
+				<span class="lift_btn_txt">今日赛事</span>
+			</a>
+		</li>
+		<li class="lift_item">
+			<a href="javascript:;" class="lift_btn">
+				<span class="lift_btn_txt">最新资讯</span>
+			</a>
+		</li>
+		<li class="lift_item lift_item_on">
+			<a href="javascript:;" class="lift_btn">
+				<span class="lift_btn_txt">最新视频</span>
+			</a>
+		</li>
+		<li class="lift_item">
+			<a href="javascript:;" class="lift_btn">
+				<span class="lift_btn_txt">NBA商城</span>
+			</a>
+		</li>
+		<li class="lift_item">
+			<a href="javascript:;" class="lift_btn">
+				<span class="lift_btn_txt">NBA球迷圈</span>
+			</a>
+		</li>
+		<li class="lift_item">
+			<a href="javascript:;" class="lift_btn">
+				<span class="lift_btn_txt">NBA社区</span>
+			</a>
+		</li>
+	</ul>
+  </div>
+  <!--页尾部分-->
+  <footer id="footer"></footer>
+  <script src="js/jquery-3.2.0.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/rq.js"></script>
+  <script src="js/tupian.js"></script>
+  <script src="js/lm.js"></script>
+ </body>
+</html>

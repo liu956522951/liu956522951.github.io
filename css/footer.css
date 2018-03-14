@@ -1,0 +1,65 @@
+#copyright-wrap {
+    width: 100%;
+    height: 415px;
+}
+#copyright-tab {
+	width:100%;
+	height:250px;
+	background: url(../imgs/foot/footer-bg_90221b.png) no-repeat;
+}
+#copyright-content {
+    width: 100%;
+    height: 165px;
+    background: #1f2428;
+}
+.copyright-tab {
+    margin: 0 auto;
+    width: 1200px;
+    height: 250px;
+}
+.copyright-tab>.tab-list {
+    width: 210px;
+}
+.copyright-tab>div {
+	height:250px;
+	float:left;
+}
+.copyright-tab span {
+    height: 65px;
+    line-height: 65px;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+}
+.copyright-tab a {
+    margin-bottom: 7px;
+    color: #fff;
+    font-size: 14px;
+    display: block;
+}
+.copyright-tab a:hover{
+	text-decoration:underline;
+}
+.copyright-tab .tab-sports-app {
+    width: 180px;
+}
+.copyright-tab img {
+    width: 110px;
+    height: 110px;
+}
+.copyright-tab .tab-nba-app {
+    width: 180px;
+}
+.copyright-content {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 1200px;
+    height: 145px;
+}
+.copyright-content p {
+    line-height: 25px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+}
