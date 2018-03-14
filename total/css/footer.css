@@ -1,0 +1,89 @@
+.rlx-footer {
+	width:100%;
+    background: #212121;
+}
+.footer-marper {
+	text-align:center;
+}
+.footer-mega {
+	padding: 100px 0 80px;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+}
+.footer-column {
+	width: 240px;
+    float: left;
+    margin-right: 45px;
+    text-align: left;	
+}
+.footer-column p {
+    color: #dedede;
+    letter-spacing: .05em;
+    line-height: 2;
+    margin: 0;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #3e3e3e;
+    background-position: 0 2em;
+    background-size: 2px .1em;
+    background-repeat: repeat-x;
+    padding-top: 20px;	
+}
+.footer-column ul {
+    padding: 0;
+    margin-bottom: 14px;
+    font-size: 12px;
+    list-style: none;
+	margin-top:10px;
+}
+.footer-column ul li a {
+	color: #818181;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.8;
+    text-decoration: none;
+}
+::selection {
+    background: #818181;
+    color: white;
+}
+.rlx-back-top {
+	top: -25px;
+    background-color: white;
+    border-color: transparent;
+	display: inline-block;
+    text-decoration: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 1px solid;
+    position: relative;
+    font-size: 0;
+    transition: background-color .3s ease-out;
+	left:45%;
+}
+.rlx-back-top:hover {
+    background-color: transparent;
+    border-color: white;
+}
+.rlx-back-top:hover .footer-top {
+    background-color: transparent;
+    border-color: #e6e6e6;
+}
+.rlx-back-top>.footer-top {
+    border-style: solid;
+    border-color: #212121;
+    border-width: 1px 1px 0 0;
+    content: "";
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -7px;
+    margin-top: -5px;
+	transform: rotate(-45deg);
+}
+.rlx-footer a:hover {
+	color:#a37e2c
+}

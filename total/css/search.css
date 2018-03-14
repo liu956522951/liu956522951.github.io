@@ -1,0 +1,348 @@
+{  border:1px solid red;}
+#main{
+    /*background: url("img/rolex-search-background-1680x1070.jpg") no-repeat;*/
+    font-family: "Microsoft YaHei","Heiti SC Light","ST Heiti SC Light","STHeiti SC Light",STHeitiSC-Light,"STHeiti Light",STXihei,sans-serif;
+    font-style: normal !important;
+}
+.title_text{
+    padding: 290px 0 40px;
+    color:black;
+}
+.keywords{
+    margin-top: 10px;
+    color: #a37e2c;
+}
+.align_center{
+    text-align: center;
+    margin: auto;
+}
+.search_input{
+    width: 350px;
+    height: 44px;
+    box-sizing: border-box;
+    border:1px solid #e6e6e6;
+    line-height: 44px;
+    position: relative;
+    background: #fff;
+}
+.search_input input[type="text"]{
+    border:none;
+    width: 240px;
+    height: 40px;
+    margin:0 24px;
+}
+.search_input span{
+    width: 60px;
+    height: 44px;
+    margin:0 auto;
+    line-height: 44px;
+    float: right;
+    font-size: 24px;
+}
+.supplier{
+    margin-top: 20px;
+    font-size: 14px;
+}
+#main .supplier:hover{
+    color: #a37e2c;
+}
+.pointer{
+    cursor: pointer;
+    text-decoration: none;
+}
+.search_main{
+    border-bottom:1px solid #e6e6e6;
+
+}
+.result{
+    position: relative;
+    width: 90%;
+    margin: 0 5%;
+}
+.result a{
+    display: inline-block;
+
+}
+
+{  border:1px solid red;}
+#main{
+    background: url("../img/rolex-search-background-1680x1070.jpg") no-repeat;
+
+}
+.title_text{
+    padding: 290px 0 40px;
+    color:black;
+}
+.keywords{
+    margin-top: 10px;
+    color: #a37e2c;
+}
+.align_center{
+    text-align: center;
+    margin: auto;
+}
+.search_input{
+    width: 350px;
+    height: 44px;
+    box-sizing: border-box;
+    border:1px solid #e6e6e6;
+    line-height: 44px;
+    font-size: 16px;
+}
+#input_box{
+  outline: 0;
+}
+.search_input span{
+    width: 60px;
+    height: 44px;
+    margin:0 auto;
+    line-height: 44px;
+    float: right;
+    font-size: 24px;
+}
+.supplier{
+    margin-top: 20px;
+    font-size: 14px;
+
+}
+#main .supplier:hover{
+    color: #a37e2c;
+}
+.shareblock{
+box-sizing: border-box;
+    background: #fff;
+    color: #a37e2c;
+    width:100%;
+    height: 180px;
+    float: left;
+    padding-top: 50px ;
+}
+
+.result{
+    position: relative;
+    width: 1032px;
+    margin: 0 5%;
+}
+.result a{
+    display: inline-block;
+    font-family: "Microsoft YaHei","Heiti SC Light","ST Heiti SC Light","STHeiti SC Light",STHeitiSC-Light,"STHeiti Light",STXihei,"Helvetica",sans-serif;
+    font-style: normal !important;
+    font-weight: lighter;
+    font-size: 11px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.result a.blocking img{
+    width:327px;
+}
+.result a:hover{
+    box-shadow:6px 6px 5px #CCCCCC;
+}
+.version{
+    color: #000;
+    font-size: 14px;
+}
+.blocking{
+    float: left;
+    overflow: hidden;
+}
+.blocking:hover .version{
+    color:#0aa1ed;
+}
+.blocking:hover img{
+    transform: scale(1.1);
+}
+
+.btns_watch_content span{
+    display: inline-block;
+    width: 120px;
+    height:40px;
+    border: 1px solid #e6e6e6;
+    line-height: 40px;
+    font-size: 14px;
+}
+.btns_watch_content span:hover{
+    box-shadow:5px 2px 5px #CCCCCC;
+}
+.choosed{
+    background: black;
+    color: white;
+}
+.title_bar{
+    margin:20px 0;
+    color:black;
+    font-weight: inherit;
+}
+.fliter{
+    display: block;
+    margin:20px 0;
+}
+.blocking{
+    width: 340px;
+    height:240px;
+    position: relative;
+}
+.page{
+    margin: 20px;
+    font-size: 14px;
+clear:both;
+}
+.page_down{
+   padding-top: 50px;
+}
+.page>p,.page>a{
+    display: inline;
+}
+.share{
+    font-size: 14px;
+    margin: 20px;
+}
+.share_icon a{
+    display: inline-block;
+    width:40px;
+    height: 40px;
+    border: 1px solid #e1e1e1;
+    line-height: 40px;
+}
+.share_icon a:hover{
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+}
+.tips{
+    position: absolute;
+    bottom: 10px;
+    left:36%;
+}
+.nothing{
+    color: #000;
+   height:564px;
+    position: relative;
+    padding: 79px;
+    font-size: 16px;
+    width:102%;
+}
+.nothing_img{
+    width:327px;
+    height: 206px;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    margin: 20px 1px;
+
+}
+.nothing_img:hover .shadows{
+    display: block;
+}
+.nothing_img:hover .shadows_title{
+    display: block;
+}
+
+
+.shadows{
+    width: 327px;
+    height: 206px;
+    background: #000000;
+    opacity: 0.8;
+    position: absolute;
+    top:0;
+    display: none;
+}
+.shadows_title{
+    color: #fff;
+    width: 327px;
+    height: 100px;
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+}
+.nothing_img img{
+    width:100%;
+    height:100%;
+}
+.nothing_bg{
+    width: 327px;
+    height:206px;
+    background: no-repeat;
+    background-position-x: center;
+    background-size:425px 206px ;
+}
+
+.nothing_imgs{
+    margin-top: 30px;
+}
+.shadows_font{
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+.black_line{
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #fff;
+    margin: 30px auto;
+}
+.dropdown_list{
+    text-align: left;
+    background: #fff;
+    position: absolute;
+    width:350px;
+    z-index: 20;
+    border:1px solid #e6e6e6;
+    border-top: none;
+    top: 43px;
+    left:-1px;
+
+    font-size: 12px;
+
+}
+.list_href{
+    display: block;
+    height:22px;
+    line-height: 22px;
+    padding: 0 30px;
+}
+p.list_href{
+    color: #000;
+}
+.list_hover{
+    background-color: #708090;
+    color:#FFFAFA;
+}
+.title_left{
+    font-size: 14px;
+    text-align: left;
+}
+.header-nav{
+    position: absolute;
+    top:70px;
+    left:40px;
+
+}
+.right_span{
+    display: inline-block;
+    margin-right: 5px;
+    width: 8px;
+    height:8px ;
+    border: 1px solid #666;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+}
+.search_html{
+    color: #000;
+}
+.goto_index{
+    text-decoration: none;
+}
+.goto_index:hover{
+    color: #a37e2c;
+    cursor:pointer;
+}

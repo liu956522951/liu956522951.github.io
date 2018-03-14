@@ -1,0 +1,567 @@
+
+// 向目标页面引入 header.html 内容
+$(".pf-header").load("header.html",()=>{
+    $.fn.scrollUnique = function() {
+        return $(this).each(function() {
+            var eventType = 'mousewheel';
+            // 火狐是DOMMouseScroll事件
+            if (document.mozHidden !== undefined) {
+                eventType = 'DOMMouseScroll';
+            }
+            $(this).on(eventType, function(event) {
+                // 一些数据
+                var scrollTop = this.scrollTop,
+                    scrollHeight = this.scrollHeight,
+                    height = this.clientHeight;
+                var delta = (event.originalEvent.wheelDelta) ? event.originalEvent.wheelDelta : -(event.originalEvent.detail || 0);
+                if ((delta > 0 && scrollTop <= delta) || (delta < 0 && scrollHeight - height - scrollTop <= -1 * delta)) {
+                    // IE浏览器下滚动会跨越边界直接影响父级滚动，因此，临界时候手动边界滚动定位
+                    this.scrollTop = delta > 0? 0: scrollHeight;
+                    // 向上滚 || 向下滚
+                    event.preventDefault();
+                }
+            });
+        });	
+    };
+    // 页面恢复滚动,页面顶部固定条显示,隐藏左侧导航栏
+    function RestoreSettings(){
+        // $(".pf-header-main").css("height","");
+        $(".pf-maskbox").css("display","none");
+        // 2. 页面无法滚动
+        $("body").removeClass("body-hidden");
+        // 3.页面顶部固定条隐藏
+        $(".pf-bar").removeClass("pf-fade");
+        // 4. 隐藏左侧导航栏
+        $(".pf-left").removeClass("pf-in");
+        // 5. 隐藏右侧愿望清单
+        $(".pf-right").removeClass("pf-in");
+        $(".pf-lang-nav").removeClass("pf-in");
+        $(".pf-header-main").css("height",0);
+    }
+    // menu 和 右侧愿望清单的点击函数
+    function maskBlock(){
+        $(".pf-header-main").css("height","100%");
+        // 1. 出现遮罩层
+        $(".pf-maskbox").css("display","block");
+        // 2. 页面无法滚动
+        $("body").addClass("body-hidden");
+        // 3.页面顶部固定条隐藏
+        $(".pf-bar").addClass("pf-fade");
+    }
+    // 获取缓存
+    // 获取缓存
+    function loadStorage(){
+        // 1.2 从缓存中读取数据，加载到愿望清单中
+        var html = "";
+        var witches = [
+            {
+                title: "星期日历型36",
+                subTitle: "蚝式，36毫米，黄金",
+                img_src:"imgs/wishlist/rolex.scene7.jpeg",
+                a_href:"details.html?xqid=1"
+            },
+            {
+                title: "星期日历型 40",
+                subTitle: "蚝式，40毫米，铂金",
+                img_src:"imgs/wishlist/rolex.scene8.jpeg",
+                a_href:"details.html?xqid=2"
+            },
+            {
+                title: "蚝式恒动 39",
+                subTitle: "蚝式，39毫米，不锈钢",
+                img_src:"imgs/wishlist/rolex.scene9.jpeg",
+                a_href:"details.html?xqid=3"
+            }
+    ];
+        //将JSON转为字符串存到变量里
+        witches = JSON.stringify(witches);
+        // console.log(witches);
+        //将变量存到localStorage里
+        localStorage.setItem("witches",witches);
+        //将变量从localStorage里取出来
+        var newWitches = localStorage.getItem("witches");
+        //转为JSON
+        var witchArray = JSON.parse(newWitches);
+        // 打印出原先对象
+        // console.log(newWitches);
+        // console.log(newWitches[1].title);
+        var len = witchArray.length;
+        // console.log(len)
+        return witchArray;
+    }
+    function stopDefault( e ){ 
+        if ( e && e.preventDefault ) 
+            e.preventDefault(); 
+        else 
+            window.event.returnValue = false;  
+    } 
+    // 一、首先自然是检测浏览器是否支持本地存储。
+        // 存在缓存不显示cookie，不存在则显示，并保存缓存
+    if(localStorage.length > 0){
+        // console.log('有缓存');
+        $(".pf-cookie").addClass("pf-fade");
+        $(".pf-placeholder").addClass("pf-fade");
+        $('.pf-bar').addClass("pf-fixed");
+    }else{
+        // console.log('无缓存');
+        $(".pf-cookie").removeClass("pf-fade");
+        localStorage.setItem("temp",new Date());
+        // 1.页面滚动时，固定条实现是否固定
+        
+        var url = window.location.pathname;
+        var reg = /.*index\.html.*/;
+        if(!reg.test(url)){
+            $(".pf-bar").addClass("pf-notindex");
+        }
+    }
+    // 页面滚动事件，页头发生改变
+    $(window).scroll(()=>{
+        var scrollTop = document.documentElement.scrollTop ||
+        document.body.scrollTop;
+        var $cookie = $('.pf-cookie');
+        var offsetTop = $cookie.height();
+        // console.log("cookie的高度："+offsetTop)
+        if($(".pf-cookie").hasClass("pf-fade")){
+            $('.pf-bar').addClass("pf-fixed");
+            if(scrollTop == 0){
+                $('.pf-bar').removeClass("pf-scroll");
+            }else{
+                $('.pf-bar').addClass("pf-scroll");
+            }
+        }else{
+            if(offsetTop<=scrollTop){
+                if(!$('.pf-bar').hasClass("pf-fixed")){
+                    $('.pf-bar').addClass("pf-fixed");
+                    $('.pf-bar').addClass("pf-scroll");
+                }
+            }else{
+                $('.pf-bar').removeClass("pf-fixed");
+                $('.pf-bar').removeClass("pf-scroll");
+            }
+        }
+    });
+    // 2.点击cookie右上角的X 实现关闭cookie功能
+    $(".cookie-close").click(()=>{
+        $('.pf-bar').addClass("pf-fixed");
+        $(".pf-cookie").addClass("pf-fade");
+        $(".pf-placeholder").addClass("pf-fade");
+    });
+        
+    // 二、左导航
+    // console.log(1)
+    $(".pf-left").scrollUnique();
+    // 1. 点击“汉堡包”
+    $(".pf-menu").click(()=>{
+        $(".pf-cookie").addClass("pf-fade");
+        $(".pf-placeholder").addClass("pf-fade");
+        maskBlock();
+        $.ajax({
+            type:"get",
+            url:"data/getNavItems.php",
+            dataType:'json',
+            success:function(data){
+                // console.log(data)
+                var nav = data["nav"],list = data["data"];
+                var html = "";
+                var len = nav.length;
+                for(var i=0;i<len;i++){
+                    html += `<li class="pf-nav-section">
+                        <!-- 1.标题 -->
+                        <a href="#" class="pf-section-title">${nav[i].title}</a>
+                        <!-- 2.劳力士腕表选项表 -->
+                        <ul class="pf-section-list">`;
+                        for(var item of list[i]){
+                            html += `<li>
+                                <a href="#" class="pf-section-item click-others" data-iid="${item.iid}" data-nid="${nav[i].nid}">
+                                ${item.title}
+                                </a>
+                                </li>`;
+                        }
+                    html+=`</ul></li>`;
+                }
+                $(".pf-section").html(html);
+                $(".pf-section>li:first-child li:first a").addClass("click-witches").removeClass("click-others");
+                $(".pf-left").addClass("pf-in");$(()=>{
+                    $("[data-nid=30]").removeClass("click-others").attr("href","map.html")
+                })
+            },
+            error:function(){
+                alert("网络故障请检查");
+            }
+        });
+        // 出现左侧导航栏
+        
+        
+    });
+    // 2.点击遮罩层，恢复
+    $(".pf-header").on("click",".pf-maskbox",
+        ()=>{
+            RestoreSettings();
+        }
+    );
+    // 3.点击导航主体的“关闭选单”按钮，恢复
+    $(".pf-header").on("click",".pf-left-close",
+        ()=>{
+            RestoreSettings();
+            $(".pf-detailsbox").removeClass("pf-in");
+        }
+    );
+    // 4.点击导航主体的“语言”按钮，显示语言栏
+    $(".pf-header").on("click",".pf-langs",
+        e=>{
+            stopDefault( e );
+            $(".pf-lang-nav").addClass("pf-in");
+            $(".pf-left-section").addClass("pf-fade");
+        }
+    );
+    // 5.点击语言栏的“返回主目录”按钮，显示语言栏
+    $(".pf-header").on("click",".pf-lang-close",
+        e=>{
+            stopDefault( e );
+            $(".pf-lang-nav").removeClass("pf-in");
+            $(".pf-left-section").removeClass("pf-fade");
+        }
+    );
+    // 6.点击语言选项更改样式
+    $(".pf-header").on("click",".pf-lang-list-anchor",
+        e=>{
+            stopDefault( e );
+            $(e.target).addClass("current").parent().siblings().children().removeClass("current");
+        }
+    );
+    // 7.选项，显示显示区4   .pf-witches
+    $(".pf-header").on("click",".click-witches",
+        e=>{
+            stopDefault( e );
+        var iid = $(e.target).data("iid");
+        // console.log(iid);
+        $(".pf-others").removeClass("pf-in");
+        $(".pf-witches").removeClass("pf-in");
+        setTimeout(()=>{
+            $.ajax({
+                type:"get",
+                url:"data/getWitches.php",
+                data:{iid},
+                dataType:'json',
+                success:function(data){
+                    console.log(data);
+                    var html = "";
+                    var nav = data["nav"];
+                    // console.log(nav)
+                    var list = data["data"];
+                    // console.log(list);
+                    // 获取整个显示区的宽度
+                    var width = $(".pf-detailsbox").width();
+                    // console.log(width);
+                    var liWidth = 0;
+                    if(width>767){
+                        liWidth = width/3-20;
+                    }else{
+                        liWidth = width/2-20;
+                    }
+                    html += `<div>
+                        <div class="pf-details-content">
+                            <span class="iconfont icon-close pf-detailsbox-close"></span>
+                            <h3>${nav[1]}</h3>
+                            <h1>${nav[0]}</h1>
+                            <p>${nav[2]}</p> 
+                        </div>
+                        <ul class="pf-details-nav"></ul></div>`
+                    $(".pf-witches").html(html);
+                    html = "";
+                    for(var i=1;i<list.length;i++){
+                        // console.log(i)
+                        html += `<li class="pf-details-item" style="width:${liWidth}px;">
+                            <!-- 1.上：详情 -->
+                            <div  style="width:${liWidth}px;overflow:hidden;position:relative;">
+                                <!-- 1.1 左：向左的箭头 -->
+                                <div class="pf-details-item-nav-prev" data-id="${i}">
+                                    <span class="iconfont icon-back1 left"></span>
+                                </div>
+                                <!-- 1.2 中：详情 -->
+                                <ul class="pf-details-item-nav" data-count="${list.length+2}" id="pf-carousel"  style="width:${liWidth * (list[i].length +2)}px;">`;
+                        for(var j =0;j<list[i].length;j++){
+                            html +=`
+                                <li class="pf-ig" data-count="${list[i].length}" style="width:${liWidth}px;"> 
+                                    <a href="details.html"> 
+                                        <img src="${list[i][j].xqimg}" style="width:calc(100%);"> 
+                                        <p>${list[i][j].xqname}</p> 
+                                    </a> 
+                                </li> `;
+                        }
+                            html +=`<li class="pf-ig"  style="width:${liWidth}px;">
+                                    <a href="search-xia.html">    
+                                    <span class="pf-campaign__cta">
+                                        <h1>+</h1>
+                                    </span>
+                                    <p class="pf-discover-text">浏览所有</p>
+                                    <p class="pf-family-text">星期日历型表款</p>
+                                </a>
+                                </li>
+                                <li class="pf-ig" data-count="${list[i].length}" style="width:${liWidth}px;"> 
+                                    <a href="#"> 
+                                        <img src="${list[i][0].xqimg}" style="width:calc(100%);"> 
+                                        <p>${list[i][0].xqname}</p> 
+                                    </a> 
+                                </li> </ul>
+                                    <!-- 1.3 右：向右的箭头 -->
+                                    <div class="pf-details-item-nav-next" data-id=${i}>
+                                        <span class="iconfont icon-right right"></span>
+                                    </div>
+                                </div>
+                                <!-- 2.下：点点点 -->
+                                <ul class="pf-carousel-dot-nav">`;
+                        for(var n=0;n<=list[i].length;n++){
+                            html +=`
+                            <li class="pf-tab" data-id="${n}"><a href="#"></a></li>`;  
+                        }
+                        html+=`</ul></li>`;
+                    };
+                    $(".pf-details-nav").html(html);
+                    $(".pf-carousel-dot-nav>li:first-child").addClass("pf-active");
+                },
+                error:function(){
+                    alert("网络故障请检查");
+                }
+            });
+            $(".pf-witches").addClass("pf-in");
+        },500);
+    });
+    
+    // 8.选项，显示显示区5   .pf-others
+    $(".pf-header").on("click",".click-others",e=>{
+        stopDefault( e );
+        var iid = $(e.target).data("iid");
+        // console.log(iid);
+        console.log($(e.target))
+        
+        // console.log($("[data-nid=30]"))
+        $(".pf-others").removeClass("pf-in");
+        $(".pf-witches").removeClass("pf-in");
+        setTimeout(()=>{
+            $.ajax({
+                type:"get",
+                url:"data/getOthers.php",
+                data:{iid},
+                dataType:'json',
+                success:function(data){
+                    // console.log(data);
+                    var html = "";
+                    var nav = data["nav"];
+                    // console.log(nav)
+                    var list = data["data"];
+                    // 获取整个显示区的宽度
+                    var divwidth = $(".pf-detailsbox").width();
+                    html += `<div><div class="pf-details-content">
+                            <span class="iconfont icon-close pf-detailsbox-close"></span>
+                            <h3>${nav[1]}</h3>
+                            <h1>${nav[0]}</h1>
+                            <p>${nav[2]}</p> 
+                        </div>
+                        <ul class="pf-details-nav"></ul></div>`;
+                    $(".pf-others").html(html);
+                    var len = list.length;
+                    // console.log(len)
+                    for(var i=0;i<len;i++){
+                        // var imgWidth = list[i].img.width
+                        html = `<li    
+                            class="pf-details-nav-item">
+                                <div >
+                                    <div>
+                                        <img src="${list[i].img}" data-cid="${list[i].cid}">
+                                        <a href="#" class="pf-textblock-container">
+                                            <div class="pf-textblock">
+                                                <h1>${list[i].series}</h1>
+                                                <p>${list[i].illustrate}</p>
+                                                <span class="pf-fake-link">探索更多</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <p>${list[i].series}</p>
+                                </div>                   
+                            </li>`;
+                        $(".pf-details-nav").append(html);
+                    };  
+                },
+                error:function(){
+                    alert("网络故障请检查");
+                }
+            });
+            $(".pf-others").addClass("pf-in");
+        },500);
+    });
+    // 9.点击显示区的“关闭”按钮，关闭显示区
+    $(".pf-header").on("click",".pf-detailsbox-close",e=>{
+        stopDefault( e );
+            $(".pf-lang-nav").removeClass("pf-in");
+            $(".pf-left-section").removeClass("pf-fade");
+            if($(".pf-witches").hasClass("pf-in"))
+                $(".pf-witches").removeClass("pf-in");
+            else
+                $(".pf-others").removeClass("pf-in");
+        }
+    );
+
+    // console.log(idArr[`q${q}`])
+    // var q = name;
+    // arr[`q${q}`] = 1;
+    // arr["w"] = 2;
+    // arr[`q${q}`] = 3;
+    // console.log(arr[`q${q}`])
+    // create_variable(id,200);
+    // console.log(window["ulId_"+id]);
+    let LIWIDTH = 0, moved=0, duration=500,ulId="";
+    var idArr = [];
+    // 左按钮
+    $(".pf-detailsbox").on("click",".pf-details-item-nav-prev",function(){
+        var $tar = $(this);
+        var ulWidth = $tar.next().width();
+        // console.log(ulWidth);
+        // console.log(LIWIDTH);
+        var $li = $tar.next().children().first();
+        LIWIDTH = $li.width();
+        var count = parseInt(ulWidth / LIWIDTH);
+        var $ul = $tar.parent().next();
+        // console.log(count)
+        // 获取自定义扩展属性,并拼接
+        var liId = "" + $tar.data("id");
+        // console.log("左："+ $tar.data("id"))
+        // console.log($li.data("id"))
+        function move(){
+            $li.animate({
+                marginLeft:-LIWIDTH*moved
+            },duration,function(){
+                if(moved == 0){
+                    moved = count-1;
+                    $li.css('marginLeft',-LIWIDTH*moved);
+                    $ul.children(`:eq(0)`).addClass('pf-active').siblings().removeClass('pf-active')
+                }else{
+                    $ul.children(`:eq(${moved})`).addClass('pf-active').siblings().removeClass('pf-active')
+                }
+            });
+        }
+        if(idArr[`ulId_${liId}`]>=0){
+            // console.log(`ulId_${liId}`)
+            moved = idArr[`ulId_${liId}`];
+            if(moved==0||moved>=count-1){
+                moved=count-1;
+                $li.css('marginLeft',-LIWIDTH*moved);
+            }
+            if(!$li.is(':animated')){
+                moved --;
+                move();
+                idArr[`ulId_${liId}`]=moved;
+                // console.log(`ulId_${liId}----不为空${moved}`)
+            }
+        }else{
+            // console.log("空："+moved)
+            moved=count-1;
+            $li.css('marginLeft',-LIWIDTH*moved);
+            moved --;
+            move();
+            idArr[`ulId_${liId}`]=moved;
+        }
+    });
+    // 右按钮
+    $(".pf-detailsbox").on("click",".pf-details-item-nav-next",function(){
+        var $tar = $(this);
+        var ulWidth = $tar.prev().width();
+        var $li = $tar.prev().children().first();
+        LIWIDTH = $li.width();
+        var $ul = $tar.parent().next();
+        var count = parseInt(ulWidth / LIWIDTH);
+        var liId = "" + $tar.data("id");
+        // console.log("右："+ $tar.data("id"));
+        function move(){
+            $li.animate({
+                marginLeft:-LIWIDTH*moved
+            },duration,function(){
+                if(moved == count-1){
+                    moved = 0;
+                    $li.css('marginLeft',0);
+                }
+                $ul.children(`:eq(${moved})`).addClass('pf-active').siblings().removeClass('pf-active');
+            })
+        }
+        if(idArr[`ulId_${liId}`]>=0){
+            moved = idArr[`ulId_${liId}`];
+            if(moved==count-1||moved==0){
+                moved=0;
+                $li.css('marginLeft',-LIWIDTH*moved);
+            }
+            if(!$li.is(':animated')){
+                moved ++;
+                move();
+                idArr[`ulId_${liId}`]=moved;
+                // console.log(`ulId_${liId}----不为空${moved}`)
+            }
+        }else{
+            // console.log("空："+moved)
+            moved=0;
+            $li.css('marginLeft',-LIWIDTH*moved);
+            moved ++;
+            move();
+            idArr[`ulId_${liId}`]=moved;
+        }
+    })
+    // 点击下方圆点
+    // $(".pf-detailsbox").on("click",".pf-tab",function(e){
+    //     var $tar = $(this);
+    //     var $li = $tar.parent().prev().find(".pf-ig").first()
+    //     console.log($tar.data("id"));
+    //     var liId = "" + $li.data("id");
+    //     moved = $tar.data("id");
+    //     LIWIDTH = parseInt($li.width());
+    //     console.log($li)
+    //     $li.css('marginLeft',-LIWIDTH*moved);
+    //     console.log(-LIWIDTH*moved)
+    //     $tar.addClass('pf-active').siblings().removeClass('pf-active');
+    //     idArr[`ulId_${liId}`]=moved;
+    // })
+    // 三、右导航
+    
+    $(".pf-right").scrollUnique();
+    // 1. 点击“愿望清单”按钮
+    $(".pf-header").on("click",".pf-wishlist",()=>{
+        maskBlock();
+        // 1.1 显示左侧导航栏
+        $(".pf-right").addClass("pf-in");
+        // 1.2 从缓存中读取数据，加载到愿望清单中
+        var html = "";
+        var newWitches = localStorage.getItem("witches");
+        //转为JSON
+        newWitches = JSON.parse(newWitches);
+        // 打印出原先对象
+        console.log(newWitches);
+        // console.log(newWitches[1].title);
+        var len = newWitches.length;
+        // console.log(len)
+        $(".pf-wish-num").html(len);
+        for(var i = 0;i<len; i++){
+            html += `<li class="pf-right-wish-item">
+                    <a href="#" class="pf-right-watch-series" data-id="12">
+                        <!-- 1.手表图片 -->
+                        <div class="pf-watch-img">
+                            <img src="${newWitches[i].img_src}" alt="">
+                        </div>
+                        <!-- 2.手表系列名 -->
+                        <p>${newWitches[i].title}</p>
+                        <!-- 3.简单说明 -->
+                        <p>${newWitches[i].subTitle}</p>
+                    </a>
+                    <a href="${newWitches[i].a_href}" class="pf-wish-mask"></a>
+                </li>`;
+        }
+        $(".pf-right-wish-list").html(html);
+    });
+
+    // 3.点击心愿表的“关闭”按钮，恢复
+    $(".pf-header").on("click",".pf-right-close",
+        ()=>{
+            RestoreSettings();
+    }); 
+    // 读取缓存，向愿望清单 总数中载入数据
+    var w = loadStorage();
+    $(".pf-wish-num").html(w.length);
+});
+

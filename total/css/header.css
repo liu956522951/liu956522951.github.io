@@ -1,0 +1,1078 @@
+
+/* header 中样式重置 start*/
+.pf-header a{
+	color:#828182;
+	text-decoration:none;
+}
+.pf-header a:hover{
+  color:#9D7F3A;
+}
+.pf-header img{
+    vertical-align:middle;
+  }
+/* header 中样式重置 end */
+
+.pf-header-main{
+    /* 相对定位 为了配合页头的绝对定位 */
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:0;
+    z-index:10000;
+    /* box-sizing: border-box; */
+}
+.pf-placeholder{
+    height:190px;
+}
+.pf-placeholder.pf-fade{
+    height:0;
+}
+.body-hidden{
+    overflow: hidden;
+}
+/**************** .pf-cookie ****************/
+
+/* 0.1、上：cookie说明 和 关闭按钮 */
+.pf-cookie{
+    /* 背景，字体颜色 */
+    background:#000;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    /*隐藏*/
+    /* display:none; */
+    transition: all .3s ease;
+}
+.pf-cookie.pf-fade{
+    margin-top:-192px;
+}
+.pf-cookie-maskbox{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+.pf-cookie>.pf-cookie-msg{
+    /* 高度，下边框，行高，水平居中，相对定位 配合子元素的图标字体 */
+    height:70px;
+    border-bottom:2px solid #ddd;
+    line-height:70px;
+    text-align:center;
+    /* padding:0 3%; */
+    position:relative;
+}
+/* 2、右：关闭按钮：图标字体 */
+.pf-cookie>.pf-cookie-msg>div{
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto;
+    right:3%;
+    width:40px;
+    height:40px;
+    line-height:40px;
+}
+.pf-cookie>.pf-cookie-msg .cookie-close{
+    font-size:26px;
+    cursor:pointer;
+    border-radius:50%;
+    background:#fff;
+    color:#000;
+    transition: all .3s ease;
+    border:1px solid #000;
+}
+.pf-cookie>.pf-cookie-msg .cookie-close:hover{
+    /* color:#fff; */
+    background:#000;
+    color:#fff;
+    border-color: #fff;
+}
+/* 0.2、下：rolex说明文字 */
+.pf-cookie>.pf-rolex-msg{
+    /* 高度 */
+    /* height:120px; */
+    position:relative;
+    padding:25px 0;
+}
+.pf-cookie>.pf-rolex-msg{
+    width:600px;
+    /* border:1px solid blue; */
+    margin:0 auto;
+}
+.pf-cookie>.pf-rolex-msg>img{
+    height:70px;
+}
+.pf-cookie>.pf-rolex-msg>span{
+    float:right;
+    width:450px;
+}
+/* 页头的上层父元素 */
+.pf-header-box{
+    position:absolute;
+    /* top:190px; */
+    left:0;
+    width:100%;
+}
+/**************** .pf-bar ****************/
+/* 页头的固定条 */
+.pf-bar{   
+    /* background:#ddd; */
+    background:transparent;
+    position:relative;
+    padding:15px 30px 5px;        
+}
+
+.pf-bar.pf-fixed{
+    box-sizing: border-box;
+    position:fixed;
+	top:0;
+	left:0;
+    width:100%;
+    color:#000;
+    background:#fff;
+}
+.pf-bar .pf-collapsed{
+    color:#fff;
+}
+.pf-fixed .pf-collapsed{
+    color:#000;
+}
+.pf-fixed .pf-burger-item{
+    border-color:#000;
+}
+
+.pf-bar.pf-fixed a{
+    color:#000;
+}
+.pf-bar.pf-fade{
+    display:none;
+}
+/* 鼠标进入 .pf-bar 背景颜色变白色 */
+.pf-bar:hover{
+    background:#fff;
+    transition: all .3s linear;
+}
+
+/* 1. 左：汉堡包 */
+.pf-menu{
+    float:left;
+    width:75px;
+    padding:0 10px;
+    /* background:#666; */
+}
+.pf-burger>span{
+    display:block;
+    border-bottom:3px solid #fff;
+    margin-bottom:5px;
+}
+.pf-burger>span:last-child{
+    width:50%;
+}
+.pf-bar:hover .pf-burger-item{
+    border-color:#000;
+}
+.pf-site-nav>.pf-menu:hover span{
+    border-color:#9D7F3A;
+    color:#9D7F3A;
+}
+/* 2. 中：logo */
+.pf-logoWrapper{
+    position:absolute;
+    width:100px;
+    left:0;
+    right:0;
+    margin:auto;
+    text-align:center;
+}
+.pf-logoWrapper>.pf-logo{
+    height:30px;
+    background:url(../imgs/logo/logo-transparent.png) no-repeat center center;
+    background-size:contain;
+}
+.pf-logoWrapper>.pf-logo-text{
+    color:#fff;
+    font-size:1em;
+}
+.pf-bar:hover .pf-logo{
+    background-image:url(../imgs/logo/logo-white.png);
+}
+.pf-fixed .pf-logo{
+    background-image:url(../imgs/logo/logo-white.png);
+}
+.pf-bar:hover .pf-logo-text{
+    color:#285E3B;
+}
+/* 3. 右：搜寻按钮和心愿按钮 */
+.pf-nav-list{
+    float:right;
+    width:180px;
+    vertical-align: middle;
+    position:relative;
+    height:calc(100%);
+}
+.pf-nav-list>.pf-search{
+    color:#fff;
+    float:left;
+    text-align:center;
+}
+.pf-wishlist{
+    height:calc( 100% );
+    width:80px;
+    position:absolute;
+    right:0;
+}
+.pf-wishlist .icon-yiguanzhu{
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    margin:auto;
+}
+.pf-wishlist .pf-nav-list-text{
+    position:absolute;
+    width:100px;
+    bottom:-25px;
+    right:0;
+    left:0;
+    margin:auto;
+}
+.pf-nav-list>.pf-search>span,.pf-nav-list>.pf-wishlist>span{
+    font-size:22px;
+}
+.pf-bar:hover .pf-search{
+    color:#000;;
+}
+.pf-nav-list>.pf-wishlist{
+    color:#fff;
+    float:right;
+    text-align:center;
+}
+.pf-bar:hover .pf-wishlist{
+    color:#000;;
+}
+/* width>1025 及 height>601 时的样式*/
+@media screen and (min-width:1025px){
+    .pf-site-nav{
+        height:50px;
+        transition: all .3s linear;
+    }
+    /* 1. 左：汉堡包 ,2. 中：logo ,3. 右：搜寻按钮和心愿按钮 高度50px*/
+    .pf-menu,.pf-logoWrapper,.pf-nav-list{
+        height:50px;
+        transition:all 0.3s linear;
+    }
+    /* 2. 中：logo */
+    /* .pf-logoWrapper{
+        width:60px;
+        transition:all 0.3s linear;
+    } */
+    .pf-logoWrapper>.pf-logo{
+        height:50px;
+        transition:all 0.3s linear;
+    }
+}
+/* 1024>width>767 时的样式*/
+@media screen and (min-width:768px) and (max-width:1024px){
+    .pf-site-nav{
+        height:35px;
+        transition: all .3s linear;
+    }
+    /* 1. 左：汉堡包 ,2. 中：logo ,3. 右：搜寻按钮和心愿按钮 高度50px*/
+    .pf-menu,.pf-logoWrapper,.pf-nav-list{
+        height:35px;
+        transition:all 0.3s linear;
+    }
+    .pf-menu>.pf-collapsed,.pf-nav-list>.pf-search>.pf-nav-list-text,.pf-nav-list>.pf-wishlist>.pf-nav-list-text{
+        display:none;
+    }
+    .pf-nav-list{
+        width:150px;
+    }
+    /* 2. 中：logo */
+    /* .pf-logoWrapper{
+        width:60px;
+        transition:all 0.3s linear;
+    } */
+    .pf-logoWrapper>.pf-logo{
+        height:35px;
+        transition:all 0.3s linear;
+    }
+}
+/* 767>width 时的样式*/
+@media screen and (max-width:767px){
+    .pf-bar{
+        padding-bottom:5px;
+    }
+    .pf-site-nav{
+        height:25px;
+        transition: all .3s linear;
+    }
+    /* 1. 左：汉堡包 ,2. 中：logo ,3. 右：搜寻按钮和心愿按钮 高度50px*/
+    .pf-menu,.pf-logoWrapper,.pf-nav-list{
+        height:25px;
+        transition:all 0.3s linear;
+    }
+    .pf-menu>.pf-collapsed,.pf-nav-list>.pf-search>.pf-nav-list-text,.pf-nav-list>.pf-wishlist>.pf-nav-list-text{
+        display:none;
+    }
+    .pf-nav-list{
+        width:90px;
+    }
+    .pf-menu>.pf-burger>.pf-bacon{
+        display:none;
+    }
+    .pf-menu{
+        /* margin-top:7px; */
+        transition:all 0.3s linear;
+        /* background:#666; */
+    }
+    /* 2. 中：logo */
+    .pf-logoWrapper{
+        width:60px;
+        margin-top:-5px;
+        transition:all 0.3s linear;
+    }
+    .pf-logoWrapper>.pf-logo{
+        height:25px;
+        transition:all 0.3s linear;
+    }
+    .pf-wishlist{
+        width:30px;
+    }
+}
+
+/********** 滚动后的样式 start **********/
+.pf-scroll{
+    padding-bottom:5px;
+}
+.pf-scroll .pf-site-nav{
+    height:25px;
+    transition: all .3s linear;
+}
+/* 1. 左：汉堡包 ,2. 中：logo ,3. 右：搜寻按钮和心愿按钮 高度50px*/
+.pf-scroll .pf-menu,.pf-logoWrapper,.pf-nav-list{
+    height:25px;
+    transition:all 0.3s linear;
+}
+.pf-scroll .pf-menu>.pf-collapsed,.pf-scroll .pf-nav-list>.pf-search>.pf-nav-list-text,.pf-scroll .pf-nav-list>.pf-wishlist>.pf-nav-list-text{
+    display:none;
+}
+.pf-scroll .pf-menu>.pf-burger>.pf-bacon{
+    display:none;
+}
+/* 2. 中：logo */
+.pf-scroll .pf-logoWrapper{
+    width:60px;
+    /* margin-top:-5px; */
+}
+.pf-scroll .pf-logoWrapper>.pf-logo{
+    height:25px;
+    transition:all 0.3s linear;
+}
+
+/* 1. 左：汉堡包 */
+/* .pf-burger>span:last-child{
+    width:50%;
+} */
+.pf-scroll .pf-burger-item{
+    border-color:#000;
+}
+.pf-site-nav>.pf-menu:hover span{
+    border-color:#9D7F3A;
+}
+/* 3. 右：搜寻按钮和心愿按钮 */
+
+.pf-scroll .pf-nav-list>.pf-search:hover span,
+.pf-scroll .pf-nav-list>.pf-wishlist:hover span{
+    color:#9D7F3A;
+}
+
+/********** 滚动后的样式 end **********/
+
+
+/********** 非index页面的样式 start **********/
+.pf-bar.pf-notindex{
+    background:#fff;
+}
+.pf-bar.pf-notindex  a{
+    color:#000;
+    text-decoration: none;
+}
+.pf-bar.pf-notindex  .pf-collapsed{
+    color:#000;
+}
+.pf-bar.pf-notindex .pf-menu>.pf-burger>span{
+    color:#000;
+    border-color:#000;
+}
+.pf-bar.pf-notindex  .pf-menu:hover span{
+    color:#9D7F3A;
+    text-decoration: none;
+}
+
+.pf-notindex .pf-logo{
+    background:url(../imgs/logo/logo.png) no-repeat center center;
+    background-size:contain;
+}
+.pf-notindex .pf-burger-item{
+    border-color:#000;
+}
+.pf-notindex .pf-menu:hover span{
+    border-color:#9D7F3A;
+    color:#9D7F3A;
+}
+/* 3. 右：搜寻按钮和心愿按钮 */
+
+.pf-notindex .pf-nav-list>.pf-search:hover span,
+.pf-notindex .pf-nav-list>.pf-wishlist:hover span{
+    color:#9D7F3A;
+}
+.pf-bar.pf-notindex  a:hover{
+    color:#9D7F3A;
+    text-decoration: none;
+}
+.pf-notindex .pf-site-nav>.pf-menu:hover span{
+    border-color:#9D7F3A;
+}
+/********** 非index页面样式 end **********/
+
+/* 面包屑导航 */
+.pf-breadcrumb_list{
+    color: #818181;
+    font-size: 11px;
+    font-weight: 100;
+}
+.pf-breadcrumb_item{
+    float:left;
+}
+.pf-breadcrumb_item>span{
+    font-size: 11px;
+}
+.pf-breadcrumb_link{
+    padding:0 10px;
+}
+/* 遮罩层 */
+.pf-maskbox{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.7);
+}
+/**************** 2. 左侧的导航框 ****************/
+.pf-left{
+    position:fixed;
+    width:320px;
+    height:100%;
+    margin-left:-320px;
+    overflow:auto;
+    transition: all .3s ease;
+    background:#F8F7F8;
+    z-index:2000;
+}
+.pf-left.pf-in{
+    position:fixed;
+    top:0;
+    left:0;    
+    z-index:200;
+    margin-left:0;
+}
+.pf-left-box{
+    /* width:640px;
+    background:#F8F7F8;
+    overflow:auto; */
+    /* 样式完成后恢复 */
+    /* margin-left:-100%; */
+}
+.pf-left .pf-left-container{
+    width:100%;
+    
+    /* padding-bottom:60px; */
+}
+/* 左：语言列表,,2.右：导航主体 */
+.pf-lang-nav,.pf-left-section{
+    float:left;
+    width:300px;
+    height:100%;
+    transition: all .3s ease;
+}
+.pf-left-section.pf-fade{
+    margin-left:320px;
+    /* width:0; */
+    overflow:hidden;
+}
+.pf-lang-nav{
+    margin-left:-320px;
+}
+.pf-lang-nav.pf-in{
+    margin-left:0;
+}
+/* 1.左：语言列表 */
+/* 1.语言列表的关闭按钮   导航主题的关闭按钮 */
+.pf-lang-nav .pf-lang-close,.pf-left-section .pf-left-close{
+    padding:0 15px;
+    width:100%;
+    height:50px;
+    line-height:50px;
+    cursor:pointer;
+}
+/* 语言列表的关闭按钮   导航主题的关闭按钮 */
+.pf-lang-nav .pf-lang-close:hover,.pf-left-section .pf-left-close:hover{
+    /* 鼠标悬浮时颜色的变化 */
+    color:#9D7F3A;
+}
+/* 语言列表的关闭按钮   导航主题的关闭按钮 */
+.pf-lang-nav .pf-lang-close>span,.pf-left-section .pf-left-close>span{
+    /* 字体大小 */
+    font-size:12px;
+}
+/* 2.语言列表的标题 */
+.pf-lang-nav .pf-lang-title{
+    border: solid #e6e6e6;
+    border-width: 1px 0;
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom:20px;
+}
+/* 3.语言列表内容 */
+.pf-lang-nav .pf-lang-list>.pf-lang-list-item>.pf-lang-list-anchor{
+    display:block;
+    font-size:14px;
+    height:45px;
+    line-height:45px;
+    padding:0 30px;
+    border-left:3px solid transparent;
+}
+.pf-lang-nav .pf-lang-list>.pf-lang-list-item>.pf-lang-list-anchor.current{
+    border-left-color:#9D7F3A;
+    color:#9D7F3A;
+}
+
+.pf-left-section{
+    text-align:center;
+    color:#828182;
+}
+.pf-left-section .pf-left-close{
+    text-align:left;
+}
+/* 2.标题 主页 */
+.pf-left-section .pf-left-title{
+    display: block;
+    width:100%;
+    margin:0 0 10px;
+}
+/* 左导航：2.标题 主页 下的 - */
+/* 左导航：3.劳力士腕表、劳力士世界、零售商  下的列表的标题 下方的 -  */
+/* 右心愿：1.标题 您的愿望清单 下的 - */
+
+.pf-left-section .pf-left-title:after,.pf-left-section .pf-section>.pf-nav-section>.pf-section-title:after,.pf-right .pf-right-content>.pf-right-title:after{
+    content:"";
+    display:block;
+    border-bottom:1px solid #212121;
+    height: 1px;
+    margin: 15px auto 0;
+    width: 10px;
+}
+/* 3.劳力士腕表、劳力士世界、零售商 列表 */
+.pf-left-section .pf-section{
+    width:100%;
+    margin:30px 0;
+}
+/* 3.劳力士腕表、劳力士世界、零售商  下的列表 */
+.pf-left-section .pf-section>.pf-nav-section{
+    width:100%;
+    margin:20px 0;
+}
+/* 3.劳力士腕表、劳力士世界、零售商 列表下的列表标题 */
+.pf-left-section .pf-section>.pf-nav-section>.pf-section-title{
+    color: #212121;
+    font-size:20px;
+    margin: 0 0 10px;
+    font-weight:300;
+}
+/* 3.劳力士腕表、劳力士世界、零售商 列表下的列表 */
+.pf-left-section .pf-section>.pf-nav-section>.pf-section-list{
+    margin-top:10px;
+}
+/* 各个列表中得选项 */
+.pf-left-section .pf-section>.pf-nav-section>.pf-section-list>li>.pf-section-item{
+    display: block;
+    font-size: 11px;
+    font-weight: 300;
+    height:25px;
+    line-height:25px;
+}
+/* 4.语言按钮 */
+.pf-left-section .pf-langs{
+    display: block;
+    font-size: 11px;
+    font-weight: 300;
+    height:100px;
+    line-height:100px;
+    border: solid #e6e6e6;
+    border-width: 1px 0;
+}
+/* 图标字体  地图 */
+.pf-left-section .pf-langs>span{
+    font-size:40px;
+    vertical-align: middle;
+}
+/* 5.logo图标 */
+.pf-left-section .pf-left-logo{
+    padding:25px 0;
+}
+/* 6.文字“我们的频道” */
+/* 7.链接列表 */
+.pf-left-link-list{
+    display:inline-block;
+    margin:10px auto;
+}
+.pf-left-link-list>li{
+    float:left;
+}
+.pf-left-link-list>li>a{
+    padding:0 2px;
+}
+
+/**************** 3. 右侧的心愿表 ****************/
+/* 2.右：导航主体 */
+.pf-right{
+    /* display:none; */
+    position:fixed;
+    top:0;
+    right:-320px;
+    width:320px;
+    height:100%;
+    background:#F8F7F8;
+    text-align:center;
+    color:#828182;
+    overflow:auto;
+    /* margin-right:-320px; */
+    transition: all .3s ease;
+		overflow-x:hidden;
+}
+.pf-right.pf-in{
+    /* width:320px; */
+    right:0;
+}
+.pf-right .pf-right-container{
+    width:300px;
+    position:relative;
+    padding-bottom:60px;
+    min-height:calc(100%);
+}
+/* 1.按钮：“关闭” */
+.pf-right .pf-right-close{
+    text-align:right;
+    padding:0 20px;
+    height:50px;
+    line-height:50px;
+    cursor:pointer;
+    color: #212121;
+}
+.pf-right .pf-right-close:hover{
+    /* 鼠标悬浮时颜色的变化 */
+    color:#9D7F3A;
+}
+.pf-right .pf-right-close>span{
+    font-size:12px;
+}
+/* 1.标题 您的愿望清单 */
+.pf-right .pf-right-content>.pf-right-title{
+    font-weight:300;
+    color: #212121;
+    font-size:20px;
+}
+/* 2.文字说明 */
+.pf-right .pf-right-content>.pf-right-text-center{
+    margin: 0 auto;
+    font-size:14px;
+    font-weight:300;
+    padding: 25px 30px;
+    width:310px;
+}
+/* 3.按钮：“浏览详细愿望清单” */
+.pf-right .pf-right-content>.pf-right-wish-button{
+    border-radius: 3px;
+    outline:0;
+    background: transparent;
+    border: 1px solid #e6e6e6;
+    color: #818181;
+    display: inline-block;
+    font-size: 11px;
+    padding:15px 45px;
+    text-align: center;
+    transition:all .3s linear;
+}
+.pf-right .pf-right-content>.pf-right-wish-button:hover{
+    color:#fff;
+    background:#212121;
+}
+/* 3.客户的愿望清单列表中列表项 */
+.pf-right .pf-right-wish-list{
+    width:100%;
+    margin:30px 0 60px;
+}
+/* 列表项 */
+.pf-right-wish-item{
+    width:300px;
+    height:230px;
+    position:relative;
+}
+.pf-right-watch-series>.pf-watch-img{
+    width:300px;
+    height:175px;
+    overflow:hidden;
+}
+.pf-right-watch-series>.pf-watch-img>img{
+    width:300px;
+}
+.pf-right-wish-item>.pf-wish-mask{
+    /* display:block; */
+    position:absolute;
+    width:300px;
+    height:230px;
+    top:0;
+    left:0;
+    background:transparent;
+}
+.pf-right-wish-item>.pf-wish-mask:hover{
+    background-color:rgba(0,0,0,0.2);
+}
+/* 4.logo图标 */
+.pf-right .pf-right-logo{
+    padding:25px 0;
+    position:absolute;
+    bottom:10px;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+/**************** 4.内容显示区 ****************/
+.pf-detailsbox:before{
+    content:"";
+    display:table;
+}
+.pf-detailsbox{
+    position:fixed;
+    top:0;
+    /* left:-100%; */
+    /* width:100%; */
+    height:100%;
+    /* background:red; */
+    /* margin-left:320px; */
+    text-align:center;
+    width:calc( 100% - 320px);
+    background:#fff;
+    
+    overflow-x: hidden;
+    margin-left:-100%;
+    transition: all .3s ease;
+}
+.pf-detailsbox.pf-in,
+.pf-others.pf-in{
+    /* left:320px; */
+    /* position:fixed; */
+    margin-left:320px;
+    /* transition: all .3s ease; */
+}
+.pf-details-content{
+    width:680px;
+    margin:50px auto;
+}
+.pf-details-content span{
+    position:absolute;
+    top:2%;
+    right:2%;
+    color:#000;
+    cursor:pointer;
+}
+.pf-details-content span:hover{
+    color:#9D7F3A;
+}
+.pf-details-content h3{
+    color:#9D7F3A;
+    font-size:24px;
+    font-weight:400;
+}
+.pf-details-content h1{
+    font-size: 46px;
+    margin-top: 6px;
+    font-weight:400;
+    color:#212021;
+}
+.pf-details-content p{
+font-size: 14px;
+color: #818181;
+}
+.pf-details{
+    display:flex;
+    padding:0 100px;
+}
+.pf-details>.pf-details-item{
+    /* border:1px solid red; */
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(33.33333% - 20px);
+    min-width:200px;
+    /* height: calc(33.33333%vw ); */
+    overflow:hidden;
+}
+.pf-details>.pf-details-item>div{
+    position:relative;
+    overflow:hidden;
+}
+.pf-details-item-nav{
+    display:flex;
+    /* width:calc( 100% * 3 ); */
+}
+/* 左右箭头 */
+.pf-details-item-nav-prev{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* height:100%; */
+}
+.pf-details-item-nav-prev span{
+    position: absolute;
+    height:20px;
+    width:100%;
+    top: 0;
+    bottom: 0;
+    margin:auto;
+    left: 0;
+}
+.pf-details-item-nav-next span{
+    position: absolute;
+    height:20px;
+    width:100%;
+    top: 0;
+    bottom: 0;
+    margin:auto;
+    right: 0;
+}
+.pf-details-item-nav-next{
+    position: absolute;
+    top: 0;
+    right:0;
+}
+.pf-details-item-nav-prev,.pf-details-item-nav-next{
+    margin: 0;
+    width: 10%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    font-weight: bold;
+    color:#C1C0C1;
+    /* padding-top:60%; */
+}
+.pf-details-item-nav-prev:hover,.pf-details-item-nav-next:hover{
+    color:#8C8B8C;
+}
+.pf-details-item .pf-left{
+    font-size:20px;
+    margin-left:calc( 150% * -1);
+    transition: all .3s ease;
+    position: absolute;
+    top: 50%;
+}
+.pf-details-item:hover .pf-left{
+    margin-left:0;
+}
+.pf-details-item .pf-right{
+    font-size:20px;
+    margin-left:calc( 150% );
+    transition: all .3s ease;
+    position: absolute;
+    top: 50%;
+}
+.pf-details-item:hover .pf-right{
+    margin-left:0;
+}
+.pf-details-item a{
+    color:#302F30;
+    font-size:14px;
+}
+.pf-details-item>div>.pf-details-item-nav li{
+    /* width:calc( 100% ); */
+}
+.pf-details-item>div>.pf-details-item-nav img{
+    /* width:calc( 100% ); */
+}
+.pf-campaign__cta{
+    margin: 150px auto 16px;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #212121;
+    border: 1px solid transparent;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 80px;
+    transition: all .3s ease;
+}
+.pf-campaign__cta:hover{
+    background-color: #fff;
+    color: #212121;
+    border:1px solid #8A898A;
+    transform: scale(1.1)
+}
+
+.pf-carousel-dot-nav {
+    position: relative;
+    bottom: 0;
+    padding: 0;
+    margin-top: 10px;
+	display: inline-block;
+    vertical-align: top;
+    margin: 0;
+	left: 0;
+    text-align: center;
+	z-index: 100;
+    width: 100%;
+	transform: translate3d(0,0,0);
+}
+.pf-carousel-dot-nav li {
+    display: inline-block;
+    vertical-align: top;
+}
+.pf-carousel-dot-nav .pf-tab a {
+    width: 20px;
+    height: 20px;
+    background-position: 0 -22px;
+	border-radius:50%;
+	background: white;
+	border: 1px solid transparent;
+	display: block;
+    font-size: 0 !important;
+    margin: 0 3px;
+    outline: 0;
+    overflow: hidden;
+    position: relative;
+	transition: opacity .3s ease-out;
+}
+.pf-carousel-dot-nav .pf-active a {
+    /* width: 20px;
+    height: 20px;
+    background-position: 0 -22px;
+	border-radius:50%;
+	background: white;
+	border: 1px solid #818181;
+	display: block;
+    font-size: 0 !important;
+    margin: 0 3px;
+    outline: 0;
+    overflow: hidden;
+    position: relative;
+    transition: opacity .3s ease-out; */
+    border-color:#818181;
+}
+.pf-carousel-dot-nav li a::before {
+    background-color: #818181;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 10px;
+    margin: 4px;
+    width: 10px;
+}
+
+
+
+.pf-details-nav{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:calc( 100% );
+}
+.pf-details-nav-item{
+    position:relative;
+    /* width:100%; */
+    margin-bottom:10px;
+}
+.pf-details-nav-item>div{
+    position:relative;
+    overflow: hidden;
+    /* width:100%; */
+    /* min-width:768px; */
+}
+.pf-details-nav-item>div>div{
+    position:relative;
+    margin:auto;
+    background-position: center;
+    background-clip:border-box;
+    background-size:cover;
+    /* width:1680px; */
+    /* margin-left: calc( 50% - 840px ); */
+}
+
+
+/* .pf-details-nav-item>div img{ width:100%; height:100%;object-fit:cover;} */
+.pf-details-nav-item p{
+    text-align:left;
+    margin:5px 0 10px 10px;
+}
+.pf-details-nav-item a{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:transparent;
+    transition: all .3s ease;
+    color:#E6E5E6;
+    opacity: 0;
+}
+.pf-details-nav-item a:hover{
+    opacity: 1;
+    background:rgba(0,0,0,0.7)
+}
+.pf-textblock{
+    position:absolute;
+    width:320px;
+    height:50%;;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+}
+.pf-textblock h1{
+    font-family: "Microsoft YaHei","Heiti SC Light","ST Heiti SC Light","STHeiti SC Light",STHeitiSC-Light,"STHeiti Light",STXihei,"Helvetica",sans-serif;
+    font-style: normal;
+    font-size:22px;
+    font-weight: 400;
+    position:relative;
+    margin:1;
+}
+.pf-textblock h1:after{
+    content:"";
+    position: absolute;
+    left: calc( 50% - 25px );
+    bottom:-18px;
+    /* display:inline-block; */
+    width: 50px;
+    height: 2px;    background-color: #e6e6e6;
+    /* margin-bottom:-1; */
+}
+.pf-textblock p {
+    font-family: "Microsoft YaHei","Heiti SC Light","ST Heiti SC Light","STHeiti SC Light",STHeitiSC-Light,"STHeiti Light",STXihei,sans-serif;
+    font-style: normal !important;
+    color: #e6e6e6;
+    line-height: 1.5;
+    margin:2rem 0 1rem;
+}
+.pf-textblock h1, .pf-textblock h2, .pf-textblock p {
+    color: #e6e6e6;
+    text-align: center;
+}
+.pf-textblock .pf-fake-link{
+    color:#818181;
+    margin-top:-1;
+}
