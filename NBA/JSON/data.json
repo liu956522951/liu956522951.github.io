@@ -1,22 +1,51 @@
-{	
+[
         {
-            "title":"Cavaliers",
-            "des":"Cleveland",
-            "imgpath":"img/NBA/Cavaliers.jpg"
+            "img1":"imgs/logo/76ers.png",
+            "title1":"76人",
+            "time":"8:00",
+            "img2":"imgs/logo/hornets.png",
+            "title2":"黄蜂"
         },
-        {"title":"Bulls","des":"Chicago","imgpath":"img/NBA/Bulls.jpg"},
-        {"title":"Warriors","des":"Golden State","imgpath":"img/NBA/Warriors.jpg"},
-        {"title":"Heat","des":"Miami","imgpath":"img/NBA/Heat.jpg"},
-        {"title":"Thunder","des":"Oklahoma des","imgpath":"img/NBA/Thunder.jpg"},
-        {"title":"Spurs","des":"San Antonio","imgpath":"img/NBA/Spurs.jpg"},
-        {"title":"Rockets","des":"Houston","imgpath":"img/NBA/Rockets.jpg"},
-        {"title":"Lakers","des":"Los Angeles","imgpath":"img/NBA/Lakers.jpg"},
-        {"title":"Bucks","des":"Milwaukee","imgpath":"img/NBA/Bucks.jpg"},
-        {"title":"Celtics","des":"Boston","imgpath":"img/NBA/Celtics.jpg"},
-        {"title":"Hornets","des":"Charlotte","imgpath":"img/NBA/Hornets.jpg"},
-        {"title":"Pistons","des":"Detroit","imgpath":"img/NBA/Pistons.jpg"},
-        {"title":"Mavericks","des":"Dallas","imgpath":"img/NBA/Mavericks.jpg"},
-        {"title":"Hawks","des":"Atlanta","imgpath":"img/NBA/Hawks.jpg"},
-        {"title":"Grizzlies","des":"Memphis","imgpath":"img/NBA/Grizzlies.jpg"},
-        {"title":"Raptors","des":"Toronto","imgpath":"img/NBA/Raptors.jpg"}
-}
+        {
+        "img1":"imgs/logo/hawks.png",
+        "title1":"老鹰",
+        "time":"8:00",
+        "img2":"imgs/logo/raptors.png",
+        "title2":"猛龙"
+        },
+        {
+        "img1":"imgs/logo/heat.png",
+        "title1":"热火",
+        "time":"8:00",
+        "img2":"imgs/logo/wizards.png",
+        "title2":"奇才"
+        },
+        {
+        "img1":"imgs/logo/rockets.png",
+        "title1":"火箭",
+        "time":"8:00",
+        "img2":"imgs/logo/thunder.png",
+        "title2":"雷霆"
+        },
+        {
+        "img1":"imgs/logo/nuggets.png",
+        "title1":"掘金",
+        "time":"8:00",
+        "img2":"imgs/logo/bulls.png",
+        "title2":"公牛"
+        },
+        {
+        "img1":"imgs/logo/knicks.png",
+        "title1":"尼克斯",
+        "time":"8:00",
+        "img2":"imgs/logo/suns.png",
+        "title2":"太阳"
+        },
+        {
+        "img1":"imgs/logo/nets.png",
+        "title1":"篮网",
+        "time":"8:00",
+        "img2":"imgs/logo/warriors.png",
+        "title2":"勇士"
+        }
+]

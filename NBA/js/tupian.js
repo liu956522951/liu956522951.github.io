@@ -11,7 +11,7 @@ timer = setInterval(fn,10);
 $(function(){
 	$.ajax({
 	type:"get",
-	url:"data/index/getmatch.php"
+	url:"JSON/data.json"
 	}).then(function(data){
 		console.log(data);
 		var html = "";
@@ -24,7 +24,7 @@ $(function(){
 $(function(){
 	$.ajax({
 	type:"get",
-	url:"data/index/getteam.php"
+	url:"JSON/getteam.json"
 	}).then(function(data){
 		console.log(data);
 		var html = "";

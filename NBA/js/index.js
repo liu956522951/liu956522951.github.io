@@ -17,20 +17,6 @@ $(function() {
 
 	var i = 0;
 	var timer;
-	$.ajax({
-		type: "get",
-		url: "data/index/getCarousel.php"
-	}).then(function (data) {
-		//console.log(data);
-		var html = "";
-		for (var p in data) {
-			html += '<a href="' + data[p].href + '" class="ig"><img src="' + data[p].img + '"> </a>';
-		}
-		var p0 = data[0];
-		//console.log(p0);
-		html += '<a href="' + data[0].href + '" class="ig"> <img src="' + data[0].img + '"> </a>';
-		//console.log(html);
-		$("#carousel").html(html);
 		showTime();
 		$(".tab").hover(function (e) {
 			clearInterval(timer);
@@ -63,7 +49,6 @@ $(function() {
 		$(window).blur(function () {
 			clearInterval();
 		})
-	})
 	$("[data-for=text-news]").click(function () {
 		$(".text-news").toggleClass("hide");
 	})

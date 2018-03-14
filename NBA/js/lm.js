@@ -1,7 +1,7 @@
 $(function(){
 	$.ajax({
 	type:"get",
-	url:"data/index/getteam1.php"
+	url:"JSON/getteam1.json"
 	}).then(function(data){
 		console.log(data);
 		var html = "";
@@ -14,7 +14,7 @@ $(function(){
 $(function(){
 	$.ajax({
 	type:"get",
-	url:"data/index/getteam2.php"
+	url:"JSON/getteam2.json"
 	}).then(function(data){
 		console.log(data);
 		var html = "";
@@ -27,7 +27,7 @@ $(function(){
 $(function(){
 	$.ajax({
 	type:"get",
-	url:"data/index/getteam3.php"
+	url:"JSON/getteam3.json"
 	}).then(function(data){
 		console.log(data);
 		var html = "";
@@ -40,7 +40,7 @@ $(function(){
 $(function(){
 	$.ajax({
 	type:"get",
-	url:"data/index/getteam4.php"
+	url:"JSON/getteam4.json"
 	}).then(function(data){
 		console.log(data);
 		var html = "";
